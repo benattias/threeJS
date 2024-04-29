@@ -1,0 +1,16 @@
+<!-- app.component.html -->
+
+<div class="h-screen w-screen p-8 bg-gray-100">
+  <div class="bg-white flex p-10 justify-center rounded-2xl shadow-xl">
+    <div class="w-1/2 border-r-2 pr-8">
+      <!-- Autres éléments -->
+      <div class="flex mt-4 gap-4">
+        <!-- Modifier l'écouteur d'événement pour appeler la fonction selectModelColor() -->
+        <button class="h-6 w-6 rounded-full shadow-lg cursor-pointer hover:opacity-50 border-2 border-white" [ngClass]="{ 'selected': selectedModelColor === color }" [style.background-color]="color" *ngFor="let color of modelColors" (click)="selectModelColor(color)"></button>
+      </div>
+      <!-- Autres éléments -->
+    </div>
+    <!-- Appeler le composant ProductPreviewComponent avec la couleur sélectionnée -->
+    <app-product-preview class="w-1/2 h-[500px]" [color]="selectedModelColor"></app-product-preview>
+  </div>
+</div>
